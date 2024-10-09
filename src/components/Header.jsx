@@ -1,4 +1,5 @@
 import InputSearch from "./InputSearch"
+import ListOfTopics from "./ListOfTopics"
 import Logo from "./Logo"
 
 const Header = () => {
@@ -9,6 +10,8 @@ const Header = () => {
       
         <InputSearch />
       </div>
+
+      <ListOfTopics />
     </header>
   )
 }
