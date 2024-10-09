@@ -2,26 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+.neomorphism {
+  border-radius: 20px;
+  background: #bdbdbd;
+  box-shadow:  20px 20px 40px #999999, -20px -20px 40px #e1e1e1;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  &:hover{
+    background: linear-gradient(145deg, #aaaaaa, #cacaca);
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+.neomorphism_inset {
+  background: #bdbdbd;
+  border-radius: 20px;
+  box-shadow: inset 20px 20px 40px #999999, inset -20px -20px 40px #e1e1e1;
 }
