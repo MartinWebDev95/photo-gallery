@@ -11,7 +11,7 @@ const InputSearch = () => {
         className='neomorphism_inset placeholder:text-black px-8 py-4 w-full'
       />
 
-      <button type='submit' className='neomorphism px-8 py-4'>
+      <button type='submit' className='neomorphism px-6 py-4'>
         Search
       </button>
     </form>
