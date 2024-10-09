@@ -29,3 +29,19 @@ export async function getRandomImages() {
     throw new Error(error.message);
   }
 }
+
+export async function getTopicImages({ slug }) {
+  try {    
+    const res = await fetch(`${process.env.API_URL}/topics/${slug}/photos?per_page=25`, {
+      headers: {
+        Authorization: `Client-ID ${process.env.ACCESS_KEY}`
+      }
+    })
+  
+    const data = await res.json();
+    
+    return data;
+  } catch (error) {
+    throw new Error(error.message);
+  }
+} 
