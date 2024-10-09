@@ -17,3 +17,7 @@
   border-radius: 20px;
   box-shadow: inset 20px 20px 40px #999999, inset -20px -20px 40px #e1e1e1;
 }
+
+.scrollbar_none {
+  scrollbar-width: none;
+}
