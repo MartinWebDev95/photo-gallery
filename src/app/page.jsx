@@ -1,5 +1,15 @@
-export default function Home() {
+import ListOfPhotos from "@/components/ListOfPhotos";
+import { getRandomImages } from "@/services/getDataFromAPI";
+
+export const metadata = {
+  title: "Photo Gallery | Home",
+};
+
+export default async function HomePage() {
+
+  const randomImages = await getRandomImages();
+
   return (
-    <h1 className="text-center">Hola mundo</h1>    
+    <ListOfPhotos images={randomImages} />    
   );
 }
