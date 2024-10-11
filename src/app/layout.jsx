@@ -6,7 +6,7 @@ export const metadata = {
   description: "Web that shows images from the Unsplash API",
 };
 
-export default function RootLayout({ children }) {
+export default function RootLayout({ children, modal }) {
   return (
     <html lang="en">
       <body className='bg-[#bdbdbd] overflow-x-hidden'>
@@ -15,6 +15,8 @@ export default function RootLayout({ children }) {
         <main className='container mx-auto px-4 lg:px-0'>
           {children}
         </main>
+
+        {modal}
       </body>
     </html>
   );
