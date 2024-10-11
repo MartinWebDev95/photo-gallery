@@ -2,7 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+
 .neomorphism {
+  border-radius: 20px;
+  background: #bdbdbd;
+  box-shadow:  20px 20px 40px #999999, -20px -20px 40px #e1e1e1;
+}
+
+.neomorphism_btn {
   border-radius: 20px;
   background: #bdbdbd;
   box-shadow:  20px 20px 40px #999999, -20px -20px 40px #e1e1e1;
