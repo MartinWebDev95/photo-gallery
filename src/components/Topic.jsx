@@ -9,7 +9,7 @@ const Topic = ({ topic }) => {
 
   return (
     <li className="min-w-fit">
-      <Link href={`/topic/photos/${topic.slug}`} className={`${slug === topic.slug ? 'neomorphism_inset' : 'neomorphism'}  p-4`}>
+      <Link href={`/topic/photos/${topic.slug}`} className={`${slug === topic.slug ? 'neomorphism_inset' : 'neomorphism_btn'}  p-4`}>
         {topic.title}
       </Link>
     </li>

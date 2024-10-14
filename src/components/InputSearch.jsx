@@ -28,7 +28,7 @@ const InputSearch = () => {
         onChange={(e) => setSearch(e.target.value)}
       />
 
-      <button type='submit' className='neomorphism px-6 py-4'>
+      <button type='submit' className='neomorphism_btn px-6 py-4'>
         Search
       </button>
     </form>

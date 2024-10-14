@@ -4,7 +4,7 @@ import React from 'react'
 
 const Logo = () => {
   return (
-    <Link href="/" className='flex items-center gap-2 neomorphism p-2'>
+    <Link href="/" className='flex items-center gap-2 neomorphism_btn p-2'>
       <Image 
         src="/assets/logo.png"
         width={45}
