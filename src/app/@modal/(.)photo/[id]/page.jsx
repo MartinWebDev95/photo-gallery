@@ -1,5 +1,6 @@
 import Modal from "@/components/Modal";
-import { getImage } from "@/services/getDataFromAPI"
+import PhotoDetail from "@/components/PhotoDetail";
+import { getImage, getImagesCollection } from "@/services/getDataFromAPI"
 
 export async function generateMetadata({ params }) {
   const { id } = params;
@@ -16,14 +17,12 @@ export default async function ModalPage({ params }){
   const { id } = params;
 
   const photo = await getImage({ id });
+
+  const collectionImages = await getImagesCollection({ id: photo.related_collections.results[1].id });
   
   return (
     <Modal>
-      <img 
-        src={photo.urls.regular} 
-        alt={photo.description} 
-        className='rounded-[20px] w-9/12 mt-8'
-      />
+      <PhotoDetail photo={photo} relatedPhotos={collectionImages} />
     </Modal>
   )
 }
