@@ -1,6 +1,16 @@
 import Modal from "@/components/Modal";
 import { getImage } from "@/services/getDataFromAPI"
 
+export async function generateMetadata({ params }) {
+  const { id } = params;
+
+  const photo = await getImage({ id });
+
+  return {
+    title: `Photo Gallery | ${photo.alt_description}`
+  }
+}
+
 export default async function ModalPage({ params }){
   
   const { id } = params;
