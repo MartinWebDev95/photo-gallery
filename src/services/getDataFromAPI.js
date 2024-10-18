@@ -14,9 +14,9 @@ export async function getTopics() {
   }
 }
 
-export async function getRandomImages() {
+export async function getRandomImages({ page = 1 } = {}) {
   try {    
-    const res = await fetch(`${process.env.API_URL}/photos/random?count=25`, {
+    const res = await fetch(`${process.env.API_URL}/photos?page=${page}&per_page=25`, {
       headers: {
         Authorization: `Client-ID ${process.env.ACCESS_KEY}`
       }
@@ -30,9 +30,9 @@ export async function getRandomImages() {
   }
 }
 
-export async function getTopicImages({ slug }) {
+export async function getTopicImages({ page = 1, slug } = {}) {
   try {    
-    const res = await fetch(`${process.env.API_URL}/topics/${slug}/photos?per_page=25`, {
+    const res = await fetch(`${process.env.API_URL}/topics/${slug}/photos?page=${page}&per_page=25`, {
       headers: {
         Authorization: `Client-ID ${process.env.ACCESS_KEY}`
       }
@@ -62,9 +62,9 @@ export async function getImage({ id }) {
   }
 }
 
-export async function getSearchImages({ query }) {
+export async function getSearchImages({ page = 1, query } = {}) {
   try {    
-    const res = await fetch(`${process.env.API_URL}/search/photos?query=${query}&per_page=25`, {
+    const res = await fetch(`${process.env.API_URL}/search/photos?query=${query}&page=${page}&per_page=25`, {
       headers: {
         Authorization: `Client-ID ${process.env.ACCESS_KEY}`
       }
@@ -72,15 +72,15 @@ export async function getSearchImages({ query }) {
   
     const data = await res.json();
     
-    return data;
+    return data.results;
   } catch (error) {
     throw new Error(error.message);
   }
 }
 
-export async function getImagesCollection({ id }) {
+export async function getImagesCollection({ page = 1, id } = {}) {
   try {    
-    const res = await fetch(`${process.env.API_URL}/collections/${id}/photos?per_page=25`, {
+    const res = await fetch(`${process.env.API_URL}/collections/${id}/photos?page=${page}&per_page=25`, {
       headers: {
         Authorization: `Client-ID ${process.env.ACCESS_KEY}`
       }
