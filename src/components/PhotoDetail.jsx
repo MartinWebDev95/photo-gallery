@@ -51,7 +51,8 @@ const Photo = ({ photo, relatedPhotos }) => {
         <img 
           src={photo.user.profile_image.small} 
           alt={photo.user.name} 
-          className="w-10 h-10 rounded-full" 
+          className="w-10 h-10 rounded-full"
+          loading="lazy" 
         />
 
         <div>
@@ -65,6 +66,7 @@ const Photo = ({ photo, relatedPhotos }) => {
           src={photo.urls.regular} 
           alt={photo.description} 
           className='rounded-[20px] neomorphism w-full md:w-10/12 my-12'
+          loading="lazy"
         />
       </div>
 
@@ -132,7 +134,11 @@ const Photo = ({ photo, relatedPhotos }) => {
 
       <p className="font-semibold mb-10 text-2xl">Related Images</p>
 
-      <ListOfPhotos images={relatedPhotos} /> 
+      <ListOfPhotos 
+        initialImages={relatedPhotos} 
+        id={photo.related_collections.results[1].id} 
+        type='collections' 
+      /> 
     </>
   )
 }

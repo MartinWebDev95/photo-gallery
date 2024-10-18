@@ -16,6 +16,6 @@ export default async function SearchPage({ params }) {
   const searchImages = await getSearchImages({ query });
 
   return (
-    <ListOfPhotos images={searchImages.results} />
+    <ListOfPhotos initialImages={searchImages} query={query} type='search' />
   );
 }

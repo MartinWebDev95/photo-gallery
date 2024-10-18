@@ -10,6 +10,6 @@ export default async function HomePage() {
   const randomImages = await getRandomImages();
 
   return (
-    <ListOfPhotos images={randomImages} />    
+    <ListOfPhotos initialImages={randomImages} type='random' />    
   );
 }

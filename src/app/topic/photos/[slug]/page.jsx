@@ -21,6 +21,6 @@ export default async function TopicPage({ params }) {
   const topicImages = await getTopicImages({ slug });
 
   return(
-    <ListOfPhotos images={topicImages} />
+    <ListOfPhotos initialImages={topicImages} slug={slug} type='topics' />
   );
 }
