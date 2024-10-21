@@ -37,7 +37,7 @@ const ListOfPhotos = ({ initialImages, slug = '', query = '', id = '', type } = 
           <Link href={`/photo/${image.id}`}>
             <img 
               src={image.urls?.small} 
-              alt={image.description} 
+              alt={image.alt_description} 
               className='w-full rounded-3xl mb-12 block shadow-xl' 
               loading="lazy"
             />

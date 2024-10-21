@@ -27,6 +27,7 @@ const CarouselBtn = ({ direction }) => {
   return (
     <button 
       type="button" 
+      aria-label={direction === 'left' ? 'Left Button' : 'Right Button'}
       className={`absolute top-0 ${direction === 'left' ? 'left-0 bg-gradient-to-r' : 'right-0 bg-gradient-to-l flex justify-end items-center'} from-amber-200 from-15% h-full w-20`} 
       onClick={handleClick}
     >

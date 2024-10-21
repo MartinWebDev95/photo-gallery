@@ -64,7 +64,7 @@ const Photo = ({ photo, relatedPhotos }) => {
       <div className="w-full flex justify-center">
         <img 
           src={photo.urls.regular} 
-          alt={photo.description} 
+          alt={photo.alt_description} 
           className='rounded-[20px] w-full md:w-10/12 my-12'
           loading="lazy"
         />
