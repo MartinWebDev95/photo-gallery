@@ -67,7 +67,8 @@ export async function getSearchImages({ page = 1, query } = {}) {
     const res = await fetch(`${process.env.API_URL}/search/photos?query=${query}&page=${page}&per_page=25`, {
       headers: {
         Authorization: `Client-ID ${process.env.ACCESS_KEY}`
-      }
+      },
+      cache: 'no-store'
     })
   
     const data = await res.json();
