@@ -3,9 +3,9 @@ import React from 'react'
 
 const Logo = () => {
   return (
-    <Link href="/" className='flex items-center gap-2 neomorphism_btn p-2'>
+    <Link href="/" className='flex items-center gap-4 font-semibold text-2xl text-slate-900'>
       <img 
-        src="/assets/logo.png"
+        src="/assets/logo_black.png"
         alt="Photo Gallery Logo"
         className='w-10 h-10' 
         loading='lazy' />

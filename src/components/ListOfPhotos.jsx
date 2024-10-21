@@ -31,14 +31,14 @@ const ListOfPhotos = ({ initialImages, slug = '', query = '', id = '', type } = 
   }, [nearScreen]);
 
   return (
-    <ul className='columns-[3_320px] gap-x-12'>
+    <ul className='columns-[3_320px] gap-x-12 pt-10'>
       {images.map((image) => (
         <li key={image.id}>
-          <Link href={`/photo/${image.id}`} className='neomorphism'>
+          <Link href={`/photo/${image.id}`}>
             <img 
               src={image.urls?.small} 
               alt={image.description} 
-              className='w-full rounded-[20px] mb-12 neomorphism block' 
+              className='w-full rounded-3xl mb-12 block shadow-xl' 
               loading="lazy"
             />
           </Link>

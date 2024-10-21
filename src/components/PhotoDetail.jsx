@@ -47,7 +47,7 @@ export function TopicsIcon() {
 const Photo = ({ photo, relatedPhotos }) => {
   return (
     <>
-      <Link href={`/users/${photo.user.username}/photos`} className='neomorphism_btn flex items-center gap-2 w-fit p-3'>
+      <Link href={`/users/${photo.user.username}/photos`} className='flex items-center gap-2 w-fit text-slate-900 hover:bg-slate-900 px-4 py-2 rounded-2xl hover:text-white transition-all ease-in-out duration-200 hover:shadow-xl'>
         <img 
           src={photo.user.profile_image.small} 
           alt={photo.user.name} 
@@ -65,32 +65,35 @@ const Photo = ({ photo, relatedPhotos }) => {
         <img 
           src={photo.urls.regular} 
           alt={photo.description} 
-          className='rounded-[20px] neomorphism w-full md:w-10/12 my-12'
+          className='rounded-[20px] w-full md:w-10/12 my-12'
           loading="lazy"
         />
       </div>
 
       <div className="flex items-center justify-between">
-        <div className="flex items-center gap-8">
-          <div className="neomorphism px-6 py-2 flex items-center gap-4">
+        <div className="flex items-center gap-8 text-white">
+          <div className="px-4 py-2 flex items-center gap-3 bg-slate-900 rounded-2xl shadow-xl">
             <ViewsIcon />
 
             <p>
               <span className="block text-sm font-semibold">
                 Views
               </span>
+
               <span className="block">
                 {photo.views}
               </span>
             </p>
           </div>
-          <div className="neomorphism px-6 py-2 flex items-center gap-4">
+
+          <div className="px-4 py-2 flex items-center gap-3 bg-slate-900 rounded-2xl shadow-xl">
             <DownloadIcon />
 
             <p>
               <span className="block text-sm font-semibold">
                 Downloads
               </span>
+
               <span className="block">
                 {photo.downloads}
               </span>
@@ -98,13 +101,14 @@ const Photo = ({ photo, relatedPhotos }) => {
           </div>
 
           {photo.topics.length !== 0 && (
-            <div className="neomorphism px-6 py-2 flex items-center gap-4">
+            <div className="px-4 py-2 flex items-center gap-3 bg-slate-900 rounded-2xl shadow-xl">
               <TopicsIcon />
 
               <p>
                 <span className="block text-sm font-semibold">
                   Topics
                 </span>
+
                 <span className="block">
                   {photo.topics.map((topic) => topic.title)}
                 </span>
@@ -115,7 +119,7 @@ const Photo = ({ photo, relatedPhotos }) => {
 
         {
           photo.location.name && (
-            <p className="neomorphism px-6 py-4 flex items-center gap-2">
+            <p className="px-4 py-4 flex items-center gap-2 bg-slate-900 rounded-2xl shadow-xl text-white">
               <LocationIcon />
 
               {`${(photo.location.name).substring(0,1).toUpperCase()}${(photo.location.name).substring(1)}`}
@@ -124,15 +128,15 @@ const Photo = ({ photo, relatedPhotos }) => {
         }
       </div>
 
-      <ul className="flex items-center justify-between gap-12 py-20 overflow-x-scroll scrollbar_none">
+      <ul className="flex items-center justify-between gap-12 py-12 overflow-x-scroll scrollbar_none">
         {photo.tags.map((tag) => (
-          <li key={tag.title} className="neomorphism_btn px-6 py-4 min-w-fit">
+          <li key={tag.title} className="px-6 py-4 min-w-fit bg-slate-900 hover:bg-slate-950 rounded-2xl text-white font-semibold shadow-xl cursor-pointer transition-all ease-in-out duration-200">
             {`${tag.title.substring(0,1).toUpperCase()}${tag.title.substring(1)}`}
           </li>
         ))}
       </ul>
 
-      <p className="font-semibold mb-10 text-2xl">Related Images</p>
+      <p className="font-semibold text-2xl text-slate-900 mt-6">Related Images</p>
 
       <ListOfPhotos 
         initialImages={relatedPhotos} 

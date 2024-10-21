@@ -28,7 +28,7 @@ const InputSearch = () => {
   }
 
   return (
-    <form className='flex items-center gap-4 lg:gap-6 w-full lg:w-[600px]' onSubmit={handleSubmit}>
+    <form className='flex items-center gap-4 lg:gap-6 w-full lg:w-[600px] font-semibold' onSubmit={handleSubmit}>
       <div className="relative w-full">
         <i className="absolute left-3 top-1/2 -translate-y-1/2">
           <SearchIcon/>
@@ -38,12 +38,12 @@ const InputSearch = () => {
           name="search" 
           id="search" 
           placeholder='Search photos... '
-          className='neomorphism_inset placeholder:text-black px-10 py-4 w-full'
+          className='bg-slate-900 placeholder:text-white px-10 py-4 w-full rounded-2xl'
           onChange={(e) => setSearch(e.target.value)}
         />
       </div>
 
-      <button type='submit' className='neomorphism_btn px-6 py-4'>
+      <button type='submit' className='bg-slate-900 rounded-2xl px-6 py-4 hover:bg-slate-950 transition-all ease-in-out duration-200'>
         Search
       </button>
     </form>
