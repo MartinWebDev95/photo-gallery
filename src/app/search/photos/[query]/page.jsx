@@ -5,7 +5,7 @@ export async function generateMetadata({ params }) {
   const query = params.query
  
   return {
-    title: `Product Gallery | ${query}`,
+    title: `Product Gallery | ${decodeURI(query.substring(0,1).toUpperCase()+query.substring(1))}`,
   }
 }
 
