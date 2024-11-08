@@ -1,5 +1,6 @@
 import Link from "next/link";
 import ListOfPhotos from "./ListOfPhotos";
+import ListOfTags from "./ListOfTags";
 
 export function LocationIcon() {
   return (
@@ -44,7 +45,10 @@ export function TopicsIcon() {
   );
 }
 
-const Photo = ({ photo, relatedPhotos }) => {
+const PhotoDetail = ({ photo, relatedPhotos }) => {
+
+  const location = `${(photo.location.name)?.substring(0,1).toUpperCase()}${(photo.location.name)?.substring(1)}`;
+
   return (
     <>
       <Link href={`/users/${photo.user.username}/photos`} className='flex items-center gap-2 w-fit text-slate-900 hover:bg-slate-900 px-4 py-2 rounded-2xl hover:text-white transition-all ease-in-out duration-200 hover:shadow-xl'>
@@ -110,7 +114,7 @@ const Photo = ({ photo, relatedPhotos }) => {
                 </span>
 
                 <span className="block">
-                  {photo.topics.map((topic) => topic.title)}
+                  {photo.topics.map((topic) => topic.title).join(', ')}
                 </span>
               </p>
             </div>
@@ -119,23 +123,17 @@ const Photo = ({ photo, relatedPhotos }) => {
 
         {
           photo.location.name && (
-            <p className="px-4 py-4 flex items-center gap-2 bg-slate-900 rounded-2xl shadow-xl text-white">
+            <p className="px-4 py-4 flex items-center gap-2 bg-slate-900 rounded-2xl shadow-xl text-white" title={location}>
               <LocationIcon />
 
-              {`${(photo.location.name).substring(0,1).toUpperCase()}${(photo.location.name).substring(1)}`}
+              {location.length > 30 ? `${location.substring(0,30)}...` : location}
             </p>
           )          
         }
       </div>
 
-      <ul className="flex items-center justify-between gap-12 py-12 overflow-x-scroll scrollbar_none">
-        {photo.tags.map((tag) => (
-          <li key={tag.title} className="px-6 py-4 min-w-fit bg-slate-900 hover:bg-slate-950 rounded-2xl text-white font-semibold shadow-xl cursor-pointer transition-all ease-in-out duration-200">
-            {`${tag.title.substring(0,1).toUpperCase()}${tag.title.substring(1)}`}
-          </li>
-        ))}
-      </ul>
-
+      <ListOfTags tags={photo.tags} />
+      
       <p className="font-semibold text-2xl text-slate-900 mt-6">Related Images</p>
 
       <ListOfPhotos 
@@ -147,4 +145,4 @@ const Photo = ({ photo, relatedPhotos }) => {
   )
 }
 
-export default Photo
+export default PhotoDetail;
