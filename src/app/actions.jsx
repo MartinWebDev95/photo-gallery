@@ -1,6 +1,6 @@
 'use server'
 
-import { getImagesCollection, getRandomImages, getSearchImages, getTopicImages } from "@/services/getDataFromAPI";
+import { getImagesCollection, getRandomImages, getSearchImages, getTopicImages, getUserPhotos } from "@/services/getDataFromAPI";
 
 export async function fetchImages({ page = 1, query = '', slug = '', id = '', type = '' } = {}) {
 
@@ -18,6 +18,9 @@ export async function fetchImages({ page = 1, query = '', slug = '', id = '', ty
       break;
     case 'collections':
       images = await getImagesCollection({ page, id });
+      break;
+    case 'users':
+      images = await getUserPhotos({ page, id });
       break;
   }
 
