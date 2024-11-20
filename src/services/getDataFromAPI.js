@@ -94,3 +94,35 @@ export async function getImagesCollection({ page = 1, id } = {}) {
     throw new Error(error.message);
   }
 } 
+
+export async function getUserPhotos({ page = 1, id }) {
+  try {    
+    const res = await fetch(`${process.env.API_URL}/users/${id}/photos/?page=${page}&per_page=25`, {
+      headers: {
+        Authorization: `Client-ID ${process.env.ACCESS_KEY}`
+      }
+    })
+  
+    const data = await res.json();
+    
+    return data;
+  } catch (error) {
+    throw new Error(error.message);
+  }
+}
+
+export async function getUserDetail({ id }) {
+  try {    
+    const res = await fetch(`${process.env.API_URL}/users/${id}`, {
+      headers: {
+        Authorization: `Client-ID ${process.env.ACCESS_KEY}`
+      }
+    })
+  
+    const data = await res.json();
+    
+    return data;
+  } catch (error) {
+    throw new Error(error.message);
+  }
+}
