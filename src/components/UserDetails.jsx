@@ -73,9 +73,11 @@ const UserDetails = ({ user }) => {
           className='rounded-full w-30 md:w-40' />
 
         <div className='w-fit'>
-          <h1 className='font-bold text-center md:text-left text-3xl md:text-4xl text-black'>{user.name}</h1>
+          <h1 className='font-bold text-center md:text-left text-3xl md:text-4xl text-black'>
+            {user.name}
+          </h1>
 
-          <p className='text-black mt-4 '>{user.bio}</p>
+          <p className='text-black mt-4 max-w-prose'>{user.bio}</p>
           
           {user.twitter_username && (
             <p className='text-black mt-4 flex items-center gap-2 w-fit' title='X Username'>
