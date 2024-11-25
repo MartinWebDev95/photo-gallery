@@ -1,11 +1,13 @@
 'use client'
 
-import { useRouter } from "next/navigation";
-import { useEffect } from "react";
+import { usePathname, useRouter } from "next/navigation";
+import { useEffect, useRef } from "react";
 
 const Modal = ({ children }) => {
   
+  const pathname = usePathname();
   const router = useRouter();
+  const modalRef = useRef();
 
   const handleClick = (e) => {
     if(e.target.getAttribute('data-name') !== null){
@@ -19,11 +21,24 @@ const Modal = ({ children }) => {
       document.body.style.overflow = 'hidden';
     }
   }, []);
+
+  useEffect(() => {
+    //Close modal when route changes
+    if(!pathname.startsWith('/photo')){
+      modalRef.current.classList.add('hidden')
+      document.body.style.overflow = 'auto';
+    }
+  }, [pathname]);
   
   return (
-    <dialog data-name='dialog' className='absolute top-[365px] lg:top-0 left-0 bg-black/70 w-full h-full flex justify-center lg:cursor-pointer lg:overflow-y-scroll' onClick={handleClick}>
-      <div className="lg:my-8 bg-amber-200 lg:rounded-3xl w-full lg:w-4/5 cursor-default h-fit">
-        <div className="my-6 lg:my-12 px-4 lg:px-12">
+    <dialog 
+      ref={modalRef}
+      data-name='dialog' 
+      className='absolute top-[276px] md:top-0 left-0 bg-black/70 w-full h-full flex justify-center md:cursor-pointer md:overflow-y-scroll' 
+      onClick={handleClick}
+    >
+      <div className="md:my-8 bg-emerald-200 md:rounded-3xl w-full md:w-4/5 cursor-default h-fit">
+        <div className="my-6 lg:my-12 px-4 md:px-6 lg:px-12">
           {children}
         </div>
       </div>
