@@ -38,7 +38,7 @@ const ListOfPhotos = ({ initialImages, slug = '', query = '', id = '', type } = 
             <img 
               src={image.urls?.small} 
               alt={image.alt_description} 
-              className='w-full rounded-3xl mb-12 block shadow-xl' 
+              className={`w-full rounded-3xl mb-12 block shadow-xl ${(image.width > image.height) ? 'aspect-video' : 'aspect-[9/16]'} object-cover`} 
               loading="lazy"
             />
           </Link>

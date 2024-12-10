@@ -69,7 +69,7 @@ const PhotoDetail = ({ photo, relatedPhotos }) => {
         <img 
           src={photo.urls.regular} 
           alt={photo.alt_description} 
-          className='rounded-[20px] w-full md:w-10/12 my-12'
+          className={`rounded-[20px] w-full md:w-10/12 my-12 ${(photo.width > photo.height) ? 'aspect-video' : 'aspect-[9/16]'} object-cover`}
           loading="lazy"
         />
       </div>
