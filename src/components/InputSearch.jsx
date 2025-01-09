@@ -56,7 +56,7 @@ const InputSearch = () => {
           id="search" 
           value={search}
           placeholder='Search photos... '
-          className='bg-slate-900 placeholder:text-white px-10 py-4 w-full rounded-2xl'
+          className='bg-white/10 backdrop-blur-xl border border-white/10 placeholder:text-white px-10 py-4 w-full rounded-2xl focus:bg-white/20'
           onChange={(e) => setSearch(e.target.value)}
         />
 
@@ -67,7 +67,7 @@ const InputSearch = () => {
         )}
       </div>
 
-      <button type='submit' className='bg-slate-900 rounded-2xl px-6 py-4 hover:bg-slate-950 transition-all ease-in-out duration-200'>
+      <button type='submit' className='bg-white/10 backdrop-blur-xl border border-white/10 text-white rounded-2xl px-6 py-4 hover:bg-white/20 transition-all ease-in-out duration-200 shadow-xl'>
         Search
       </button>
     </form>

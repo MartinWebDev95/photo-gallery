@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import "./globals.css";
+import Blob from "@/components/Blob";
 
 export const metadata = {
   title: "Photo Gallery",
@@ -9,12 +10,17 @@ export const metadata = {
 export default function RootLayout({ children, modal }) {
   return (
     <html lang="en">
-      <body className='bg-emerald-200 text-white overflow-x-hidden'>
-        <Header />
-        
-        <main className='container mx-auto px-4 lg:px-0'>
-          {children}
-        </main>
+      <body className='overflow-x-hidden bg-black'>
+        <Blob />
+
+        <div className="backdrop-blur-3xl text-white">
+          <Header />
+          
+          <main className='container mx-auto px-4 lg:px-0'>
+            {children}
+          </main>
+
+        </div>
 
         {modal}
       </body>

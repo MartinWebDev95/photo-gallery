@@ -66,21 +66,21 @@ export function InstagramIcon() {
 const UserDetails = ({ user }) => {
   return (
     <div className='grid place-content-center w-full py-10'>
-      <div className='flex flex-col md:flex-row items-center gap-8'>
+      <div className='flex flex-col md:flex-row items-center gap-8 text-white'>
         <img 
           src={user.profile_image.large} 
           alt={user.name} 
           className='rounded-full w-30 md:w-40' />
 
         <div className='w-fit'>
-          <h1 className='font-bold text-center md:text-left text-3xl md:text-4xl text-black'>
+          <h1 className='font-bold text-center md:text-left text-3xl md:text-4xl'>
             {user.name}
           </h1>
 
-          <p className='text-black mt-4 max-w-prose'>{user.bio}</p>
+          <p className='mt-4 max-w-prose'>{user.bio}</p>
           
           {user.twitter_username && (
-            <p className='text-black mt-4 flex items-center gap-2 w-fit' title='X Username'>
+            <p className='mt-4 flex items-center gap-2 w-fit' title='X Username'>
               <TwitterIcon/>
 
               {user.twitter_username}
@@ -88,7 +88,7 @@ const UserDetails = ({ user }) => {
           )}
 
           {user.instagram_username && (
-            <p className='text-black mt-4 flex items-center gap-2 w-fit' title='Instagram Username'>
+            <p className='mt-4 flex items-center gap-2 w-fit' title='Instagram Username'>
               <InstagramIcon/>
 
               {user.instagram_username}
@@ -96,7 +96,7 @@ const UserDetails = ({ user }) => {
           )}
 
           {user.portfolio_url && (
-            <p className='text-black flex items-center gap-2 mt-4 text-wrap' title={`Portfolio's user`}>
+            <p className='flex items-center gap-2 mt-4 text-wrap' title={`Portfolio's user`}>
               <LinkIcon/>
               
               <Link href={user.portfolio_url} className='text-wrap'>
@@ -110,19 +110,19 @@ const UserDetails = ({ user }) => {
           )}
 
           <div className='flex items-center gap-4 mt-4 w-fit'>
-            <p className='text-black flex items-center gap-1' title='Photos'>
+            <p className='flex items-center gap-1' title='Photos'>
               <ImageIcon/>
               
               {user.total_photos}
             </p>
 
-            <p className='text-black flex items-center gap-1' title='Likes'>
+            <p className='flex items-center gap-1' title='Likes'>
               <HeartIcon/>
               
               {user.total_likes}
             </p>
 
-            <p className='text-black flex items-center gap-1' title='Followers'>
+            <p className='flex items-center gap-1' title='Followers'>
               <FollowersIcon/>
               
               {user.followers_count}

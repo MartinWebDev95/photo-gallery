@@ -51,7 +51,7 @@ const PhotoDetail = ({ photo, relatedPhotos }) => {
 
   return (
     <>
-      <Link href={`/users/${photo.user.username}/photos`} className='flex items-center gap-2 w-fit text-slate-900 hover:bg-slate-900 px-4 py-2 rounded-2xl hover:text-white transition-all ease-in-out duration-200 hover:shadow-xl'>
+      <Link href={`/users/${photo.user.username}/photos`} className='flex items-center gap-2 w-fit bg-white/10 border border-white/10 text-white hover:bg-white/20 px-4 py-2 rounded-2xl hover:text-white transition-all ease-in-out duration-200 hover:shadow-xl'>
         <img 
           src={photo.user.profile_image.small} 
           alt={photo.user.name} 
@@ -76,7 +76,7 @@ const PhotoDetail = ({ photo, relatedPhotos }) => {
 
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-8 text-white">
-          <div className="px-4 py-2 flex items-center gap-3 bg-slate-900 rounded-2xl shadow-xl">
+          <div className="px-4 py-2 flex items-center gap-3 bg-white/10 border border-white/10 text-white rounded-2xl shadow-xl">
             <ViewsIcon />
 
             <p>
@@ -90,7 +90,7 @@ const PhotoDetail = ({ photo, relatedPhotos }) => {
             </p>
           </div>
 
-          <div className="px-4 py-2 flex items-center gap-3 bg-slate-900 rounded-2xl shadow-xl">
+          <div className="px-4 py-2 flex items-center gap-3 bg-white/10 border border-white/10 text-white rounded-2xl shadow-xl">
             <DownloadIcon />
 
             <p>
@@ -105,7 +105,7 @@ const PhotoDetail = ({ photo, relatedPhotos }) => {
           </div>
 
           {photo.topics.length !== 0 && (
-            <div className="px-4 py-2 flex items-center gap-3 bg-slate-900 rounded-2xl shadow-xl">
+            <div className="px-4 py-2 flex items-center gap-3 bg-white/10 border border-white/10 text-white rounded-2xl shadow-xl">
               <TopicsIcon />
 
               <p>
@@ -123,7 +123,7 @@ const PhotoDetail = ({ photo, relatedPhotos }) => {
 
         {
           photo.location.name && (
-            <p className="px-4 py-4 flex items-center gap-2 bg-slate-900 rounded-2xl shadow-xl text-white" title={location}>
+            <p className="px-4 py-4 flex items-center gap-2 bg-white/10 border border-white/10 text-white rounded-2xl shadow-xl" title={location}>
               <LocationIcon />
 
               {location.length > 30 ? `${location.substring(0,30)}...` : location}
@@ -134,7 +134,7 @@ const PhotoDetail = ({ photo, relatedPhotos }) => {
 
       <ListOfTags tags={photo.tags} />
       
-      <p className="font-semibold text-2xl text-slate-900 mt-6">Related Images</p>
+      <p className="font-semibold text-2xl text-white mt-6">Related Images</p>
 
       <ListOfPhotos 
         initialImages={relatedPhotos} 
