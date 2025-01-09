@@ -9,8 +9,8 @@ export async function generateMetadata({ params }) {
   const topic = topics.filter((item) => item.slug === slug); 
  
   return {
-    title: `Product Gallery | ${topic[0].title}`,
-    description: `${topic[0].description}`
+    title: `Product Gallery | ${topic[0]?.title}`,
+    description: `${topic[0]?.description}`
   }
 }
 
