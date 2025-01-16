@@ -1,6 +1,6 @@
 import Link from "next/link";
 import ListOfPhotos from "./ListOfPhotos";
-import ListOfTags from "./ListOfTags";
+import ListOfItems from "./ListOfItems";
 
 export function LocationIcon() {
   return (
@@ -132,7 +132,7 @@ const PhotoDetail = ({ photo, relatedPhotos }) => {
         }
       </div>
 
-      <ListOfTags tags={photo.tags} />
+      <ListOfItems items={photo.tags} type='tags' />
       
       <p className="font-semibold text-2xl text-white mt-6">Related Images</p>
 

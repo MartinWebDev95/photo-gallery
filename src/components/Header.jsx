@@ -1,6 +1,6 @@
-import CarouselOfTopics from "./CarouselOfTopics"
 import InputSearch from "./InputSearch"
 import Logo from "./Logo"
+import CarouselOfItems from "./CarouselOfItems";
 
 const Header = () => {
   return (
@@ -12,7 +12,7 @@ const Header = () => {
           <InputSearch />
         </div>
       
-        <CarouselOfTopics />
+        <CarouselOfItems />
       </div>
     </header>
   )
