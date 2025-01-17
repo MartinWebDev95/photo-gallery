@@ -19,7 +19,8 @@ export async function getRandomImages({ page = 1 } = {}) {
     const res = await fetch(`${process.env.API_URL}/photos?page=${page}&per_page=25`, {
       headers: {
         Authorization: `Client-ID ${process.env.ACCESS_KEY}`
-      }
+      },
+      cache: 'no-store'
     })
   
     const data = await res.json();
